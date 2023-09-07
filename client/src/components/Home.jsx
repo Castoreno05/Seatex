@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { GetAllSamples } from "./Results/resultsActions";
 import styled from "styled-components";
 
 function Home() {
 	const navigate = useNavigate();
+	GetAllSamples();
 	return (
 		<Container>
 			<h1>Home</h1>

@@ -14,6 +14,20 @@ const db = mysql.createConnection({
 	password: process.env.DB_PASSWORD,
 	database: process.env.DB_DATABASE,
 });
+
+app.get("/getAllData", (req, res) => {
+	const query = "SELECT * FROM sampledata";
+
+	db.query(query, (err, results) => {
+		if (err) {
+			console.error(err);
+			res.status(500).send("Error fetching data from the database.");
+		} else {
+			console.log("Data fetched from the database.");
+			res.status(200).json(results); // Send the retrieved data as JSON response
+		}
+	});
+});
 // Define a route to insert data into the database
 app.post("/insertData", (req, res) => {
 	const {

@@ -1,7 +1,10 @@
+import { useDispatch } from "react-redux";
+import { addSamples } from "../redux/actions/sampleActions";
 import axios from "axios";
 import styled from "styled-components";
 
 function CheckIn() {
+	const dispatch = useDispatch();
 	const handlePostData = () => {
 		const currentDate = new Date();
 		const formattedDate =
@@ -18,16 +21,17 @@ function CheckIn() {
 			String(currentDate.getSeconds()).padStart(2, "0");
 
 		const post__Request = {
+			// SampleNo: 1,
 			Date: formattedDate,
 			Time_In: formattedDate,
-			Time_Out: formattedDate,
-			Status: 1,
+			// Time_Out: formattedDate,
+			Status: 0,
 			Product: "Ammonia",
-			Sampler_Name: "Stephan McCormick",
-			LotNo: "23rwef",
-			BatchNo: "23ewdasd",
-			Comments: "Sample of old product. Testing the quality",
-			Location: "MISC",
+			Sampler_Name: "Lisa Dennis",
+			LotNo: "8wruefh",
+			BatchNo: "23uq8edias",
+			Comments: "Sample from finish production",
+			Location: "BL-5",
 		};
 
 		axios
@@ -38,6 +42,7 @@ function CheckIn() {
 			})
 			.then((response) => {
 				console.log(response);
+				dispatch(addSamples(post__Request));
 			})
 			.catch((error) => {
 				console.error(error);
