@@ -6,6 +6,7 @@ function Results() {
 	GetAllSamples();
 	return (
 		<Container>
+			<h2>Sample Results</h2>
 			<Samples />
 		</Container>
 	);

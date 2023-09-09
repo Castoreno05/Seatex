@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { setSamples } from "../../redux/actions/sampleActions";
 import axios from "axios";
+
 export const GetAllSamples = () => {
 	const dispatch = useDispatch();
 	axios

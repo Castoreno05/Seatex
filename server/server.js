@@ -2,10 +2,16 @@ const express = require("express");
 const app = express();
 const mysql = require("mysql2");
 const cors = require("cors");
+const io = require("socket.io")(3002, {
+	cors: {
+		origin: ["http://localhost:3000"],
+	},
+});
 
 require("dotenv").config();
 
 app.use(cors());
+
 app.use(express.json());
 
 const db = mysql.createConnection({
@@ -71,6 +77,17 @@ app.post("/insertData", (req, res) => {
 			}
 		}
 	);
+});
+
+io.on("connection", (socket) => {
+	console.log(`User: ${socket.id} has connected`);
+	socket.on("send_message", (data) => {
+		console.log(data);
+		io.emit("display_message", data);
+	});
+	socket.on("disconnect", () => {
+		console.log(`User: ${socket.id} has disconnected`);
+	});
 });
 
 app.listen(3001, () => {
