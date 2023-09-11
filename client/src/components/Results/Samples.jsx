@@ -5,7 +5,7 @@ export const Samples = () => {
 	const { samples } = useSelector((state) => state?.sampleData);
 	return (
 		<Container>
-			{samples.map((sample, i) => {
+			{samples?.map((sample, i) => {
 				const date = sample.Date;
 				const dateParts = date.split(" ");
 				const formattedDate = dateParts[0];
