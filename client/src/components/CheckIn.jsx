@@ -4,12 +4,14 @@ import styled from "styled-components";
 function CheckIn({ socket }) {
 	const handlePostData = () => {
 		const currentDate = new Date();
+		const comment = document.getElementById("comment").value;
+		// console.log(comment);
 		const formattedDate =
-			currentDate.getFullYear() +
-			"-" +
 			String(currentDate.getMonth() + 1).padStart(2, "0") +
-			"-" +
+			"/" +
 			String(currentDate.getDate()).padStart(2, "0") +
+			"/" +
+			currentDate.getFullYear() +
 			" " +
 			String(currentDate.getHours()).padStart(2, "0") +
 			":" +
@@ -27,27 +29,31 @@ function CheckIn({ socket }) {
 			Sampler_Name: "Carolyn Daniels",
 			LotNo: "5tersfd",
 			BatchNo: "23ewds",
-			Comments: "This is a comment",
+			Comments: comment,
 			Location: "Wearhouse",
 		};
 
 		axios
-			.post("http://localhost:3001/insertData", post__Request, {
+			.post("http://localhost:3001/api/sample/insertData", post__Request, {
 				headers: {
 					"Content-Type": "application/json",
 				},
 			})
 			.then((response) => {
-				console.log(response);
+				// console.log(response);
+				socket.emit("send_message", response.data);
 			})
 			.catch((error) => {
 				console.error(error);
 			});
-		socket.emit("send_message", post__Request);
 	};
 
 	return (
 		<Container>
+			<textarea
+				type="text"
+				id="comment"
+			/>
 			<button onClick={handlePostData}>Post Data</button>
 		</Container>
 	);

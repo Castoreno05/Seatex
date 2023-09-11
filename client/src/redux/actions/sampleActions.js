@@ -12,3 +12,9 @@ export const addSamples = (sample) => {
 		payload: sample,
 	};
 };
+export const updateSample = (sample) => {
+	return {
+		type: ActionTypes.UPDATE_SAMPLE,
+		payload: sample,
+	};
+};

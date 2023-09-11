@@ -10,6 +10,7 @@ function Home() {
 			<h1>Home</h1>
 			<button onClick={() => navigate("/checkin")}>Check In</button>
 			<button onClick={() => navigate("/results")}>Results Page</button>
+			<button onClick={() => navigate("/editsamples")}>Edit Page</button>
 		</Container>
 	);
 }

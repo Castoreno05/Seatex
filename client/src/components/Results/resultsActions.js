@@ -5,13 +5,13 @@ import axios from "axios";
 export const GetAllSamples = () => {
 	const dispatch = useDispatch();
 	axios
-		.get("http://localhost:3001/getAllData", {
+		.get("http://localhost:3001/api/sample/getAllData", {
 			headers: {
 				"Content-Type": "application/json",
 			},
 		})
 		.then((response) => {
-			dispatch(setSamples(response.data));
+			dispatch(setSamples(response.data.reverse()));
 		})
 		.catch((error) => {
 			console.error(error);
