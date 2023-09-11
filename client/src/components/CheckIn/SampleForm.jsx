@@ -65,7 +65,7 @@ export const SampleForm = ({ socket }) => {
 		"9915FC",
 		"1349",
 	];
-	const locations = ["Warehouse", "Production", "BL-10", "ST-95", "Tank Truck"];
+	const locations = ["Warehouse", "Production", "BL-10", "ST-95", "Tank Truck", "239", "445"];
 
 	const product = products.map((p, i) => (
 		<option
