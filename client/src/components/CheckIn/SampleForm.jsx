@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { formattedDate } from "./checkinActions";
 
 export const SampleForm = ({ socket }) => {
 	const [formData, setFormData] = useState({
@@ -21,6 +20,22 @@ export const SampleForm = ({ socket }) => {
 	};
 	const handlePostData = (e) => {
 		e.preventDefault();
+
+		const currentDate = new Date();
+
+		const formattedDate =
+			String(currentDate.getMonth() + 1).padStart(2, "0") +
+			"/" +
+			String(currentDate.getDate()).padStart(2, "0") +
+			"/" +
+			currentDate.getFullYear() +
+			" " +
+			String(currentDate.getHours()).padStart(2, "0") +
+			":" +
+			String(currentDate.getMinutes()).padStart(2, "0") +
+			":" +
+			String(currentDate.getSeconds()).padStart(2, "0");
+
 		const post__Request = {
 			Date: formattedDate,
 			Time_In: formattedDate,
@@ -65,7 +80,15 @@ export const SampleForm = ({ socket }) => {
 		"9915FC",
 		"1349",
 	];
-	const locations = ["Warehouse", "Production", "BL-10", "ST-95", "Tank Truck", "239", "445"];
+	const locations = [
+		"Warehouse",
+		"Production",
+		"BL-10",
+		"ST-95",
+		"Tank Truck",
+		"239",
+		"445",
+	];
 
 	const product = products.map((p, i) => (
 		<option
@@ -145,7 +168,7 @@ export const SampleForm = ({ socket }) => {
 					</div>
 				</div>
 				<div className="buttonDiv">
-					<button onClick={(e) => handlePostData(e)}>Post Data</button>
+					<button onClick={(e) => handlePostData(e)}>Post Sample</button>
 				</div>
 			</form>
 		</Container>

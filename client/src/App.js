@@ -29,7 +29,7 @@ function App() {
 					element={<Results socket={socket} />}
 				/>
 				<Route
-					path="/editsamples"
+					path="/update_samples"
 					exact
 					element={<Update socket={socket} />}
 				></Route>

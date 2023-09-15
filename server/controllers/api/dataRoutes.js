@@ -72,16 +72,16 @@ router.post("/insertData", (req, res) => {
 });
 // Define a route to update data in the database
 router.put("/updateData/:sampleNo", (req, res) => {
-	const { Status, Comments } = req.body;
+	const { Status, Comments, Time_Out } = req.body;
 	const { sampleNo } = req.params;
 
 	const query = `
 	  UPDATE sampledata
-	  SET Status = ?, Comments = ?
+	  SET Status = ?, Comments = ?, Time_Out = ?
 	  WHERE SampleNo = ?
 	`;
 
-	db.query(query, [Status, Comments, sampleNo], (err, result) => {
+	db.query(query, [Status, Comments, Time_Out, sampleNo], (err, result) => {
 		if (err) {
 			console.error(err);
 			res.status(500).send("Error updating data in the database.");

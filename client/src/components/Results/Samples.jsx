@@ -7,9 +7,13 @@ export const Samples = () => {
 		<Container>
 			{samples?.map((sample, i) => {
 				const date = sample.Date;
+				const timeOut = sample.Time_Out;
+				const timeParts = timeOut && timeOut.split(" ");
 				const dateParts = date.split(" ");
 				const formattedDate = dateParts[0];
 				const formattedTimeIn = dateParts[1];
+				const formattedTimeOut = timeOut && timeParts[1];
+				console.log(timeParts)
 
 				const getStatusColor = (status) => {
 					switch (status) {
@@ -50,7 +54,7 @@ export const Samples = () => {
 							<p>{sample.Product}</p>
 							<p>{formattedDate}</p>
 							<p>{formattedTimeIn}</p>
-							<p></p>
+							<p>{formattedTimeOut}</p>
 							<p>{sample.Sampler_Name}</p>
 							<p>{sample.LotNo}</p>
 							<p>{sample.Location}</p>
@@ -111,7 +115,7 @@ const Container = styled.div`
 				font-weight: bold;
 				color: whitesmoke;
 				margin: 0;
-				padding: 1rem;
+				padding: 0.5rem;
 			}
 			p:last-of-type {
 				border: none;
