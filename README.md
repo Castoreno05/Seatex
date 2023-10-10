@@ -10,6 +10,13 @@ SO THAT operations will have access to live updates from Quality Technicians
 
 ## Demo
 
+
+[Sample Check-in.webm](https://github.com/Castoreno05/Seatex/assets/105801681/8a61e789-ea1c-4fc3-b007-7495796a7d62)
+
+
+[Sample Update.webm](https://github.com/Castoreno05/Seatex/assets/105801681/765fc39b-06fb-458b-9bbe-94662e8a885c)
+
+
 ## Tools Used
 
 - React
