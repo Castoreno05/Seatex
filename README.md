@@ -23,6 +23,9 @@ SO THAT operations will have access to live updates from Quality Technicians
 ## Author
 
 **Matthew Castoreno**
+
 Email: [matthew.castoreno@yahoo.com](matthew.castoreno@yahoo.com)
+
 Github: [Castoreno05](https://github.com/Castoreno05)
+
 LinkedIn: [Matthew Castoreno](https://www.linkedin.com/in/matthew-castoreno-4973a923b/)
