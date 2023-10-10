@@ -10,11 +10,9 @@ SO THAT operations will have access to live updates from Quality Technicians
 
 ## Demo
 
+![Sample Update](https://github.com/Castoreno05/Seatex/assets/105801681/c79e208d-23a4-4306-a9f6-a61445c5933f)
 
-[Sample Check-in.webm](https://github.com/Castoreno05/Seatex/assets/105801681/8a61e789-ea1c-4fc3-b007-7495796a7d62)
-
-
-[Sample Update.webm](https://github.com/Castoreno05/Seatex/assets/105801681/765fc39b-06fb-458b-9bbe-94662e8a885c)
+![Sample Check-in](https://github.com/Castoreno05/Seatex/assets/105801681/9bc582f1-29c9-42de-9156-8576671de024)
 
 
 ## Tools Used
